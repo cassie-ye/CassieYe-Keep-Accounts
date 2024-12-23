@@ -1,0 +1,16 @@
+sky:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: localhost
+    port: 3306
+    database: sky_take_out
+    username: root
+    password: root
+  alioss:
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    access-key-id: LTAI5tNhUVjgqYHtsYkiqD5q
+    access-key-secret: vhh1tP1aal6HZHs7RcQ32jue1DohFO
+    bucket-name: cassie-bucket
+  redis:
+    host: localhost
+    port: 6379

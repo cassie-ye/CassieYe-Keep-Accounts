@@ -17,26 +17,24 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    // 主键
     private Long id;
 
-    //微信用户唯一标识
-    private String openid;
+    // 微信用户唯一标识
+    private String openId;
 
-    //姓名
-    private String name;
+    // 用户名
+    private String username;
 
-    //手机号
-    private String phone;
-
-    //性别 0 女 1 男
+    // 性别 0 女 1 男
     private String sex;
 
-    //身份证号
-    private String idNumber;
-
-    //头像
+    // 头像
     private String avatar;
 
-    //注册时间
+    // 手机号
+    private String phoneNumber;
+
+    // 注册时间
     private LocalDateTime createTime;
 }

@@ -22,3 +22,11 @@ export function logout() {
     method: 'post'
   })
 }
+
+export function test(data) {
+  return request({
+    url: '/admin/employee/login',
+    method: 'post',
+    data
+  })
+}

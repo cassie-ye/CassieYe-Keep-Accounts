@@ -1,17 +1,17 @@
 module.exports = {
-  title: 'Vue Element Admin',
+  title: '南京众彩商户屏管理系统',
 
   /**
    * @type {boolean} true | false
    * @description Whether show the settings right-panel
    */
-  showSettings: true,
+  showSettings: false,
 
   /**
    * @type {boolean} true | false
    * @description Whether need tagsView
    */
-  tagsView: true,
+  tagsView: false,
 
   /**
    * @type {boolean} true | false

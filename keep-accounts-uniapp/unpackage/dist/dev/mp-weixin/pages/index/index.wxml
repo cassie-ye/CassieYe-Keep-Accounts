@@ -1,1 +1,1 @@
-<view class="content"><image class="logo" src="/static/logo.png"></image><view class="text-area"><text class="title">{{title}}</text></view></view>
+<view class="welcome data-v-57280228"><view class="topPic data-v-57280228"><image class="seventeen_avator data-v-57280228" mode="widthFix" src="../../static/img/17-avator.jpg"></image><view class="circle_border data-v-57280228"></view></view><view class="welcome_text data-v-57280228">欢迎来到小烨记账</view><view class="btn_box data-v-57280228"><button class="cute-button data-v-57280228">登录</button></view></view>

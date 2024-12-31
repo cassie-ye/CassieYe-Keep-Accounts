@@ -7,7 +7,7 @@
 		<view class="welcome_text">欢迎来到小烨记账</view>
 		<view class="btn_box">
 			<!-- <u-button text="渐变色按钮" color="linear-gradient(to right, rgb(66, 83, 216), rgb(213, 51, 186))"></u-button> -->
-			<button class="cute-button">登录</button>
+			<button class="cute-button" @click="login()">登录</button>
 		</view>
 	</view>
 </template>
@@ -16,14 +16,59 @@
 export default {
 	data() {
 		return {
-			title: 'Hello'
 		}
 	},
 	onLoad() {
 
 	},
 	methods: {
+		/**
+		 * 点击登录按钮
+		 */
+		login() {
+			if (!uni.getStorageSync('openId')) {
+				this.getWxCode()
+			}
+		},
 
+		/**
+		 * 获取微信code
+		 */
+		getWxCode() {
+			wx.login({
+				success: (res) => {
+					this.getOpenId(res.code);
+					console.log(res)
+				},
+				fail: (res) => { console.log("获取登录凭证code失败！", res) }
+			})
+		},
+
+		/**
+		 * 获取openId
+		 * @param code 
+		 */
+		async getOpenId(code) {
+			var url = "/user/user/login"
+			let data = {
+				code: code
+			}
+			const res = await this.$postWwwRequest({
+				url,
+				data
+			});
+			console.log('res', res)
+			if (res.data.code == 1) {
+				uni.setStorageSync('openId', res.data.data.openid)
+				uni.setStorageSync('token', res.data.data.token)
+				uni.navigateTo({
+					url: '/pages/home/home'
+				})
+				this.$api.msg("登录成功");
+			} else {
+				this.$api.msg("登录失败");
+			}
+		},
 	}
 }
 </script>

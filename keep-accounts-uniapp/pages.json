@@ -9,6 +9,13 @@
 			"style": {
 				"navigationBarTitleText": "小烨记账"
 			}
+		},
+		{
+		  "path" : "pages/home/home",
+		  "style" : 
+		  {
+		    "navigationBarTitleText" : ""
+		  }
 		}
 	],
 	"globalStyle": {

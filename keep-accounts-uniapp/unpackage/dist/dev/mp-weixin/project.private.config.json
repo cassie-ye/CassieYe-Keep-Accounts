@@ -3,5 +3,26 @@
   "projectname": "keep-accounts-uniapp",
   "setting": {
     "compileHotReLoad": true
-  }
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "",
+          "pathName": "pages/personalInfo/personalInfo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/my/my",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "libVersion": "3.7.2"
 }

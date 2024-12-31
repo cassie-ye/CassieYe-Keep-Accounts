@@ -1,28 +1,85 @@
 {
-	// 如果您是通过uni_modules形式引入uView，可以忽略此配置
-	"easycom": {
-		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
-	},
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "小烨记账"
-			}
-		},
-		{
-		  "path" : "pages/home/home",
-		  "style" : 
-		  {
-		    "navigationBarTitleText" : ""
-		  }
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "小烨记账",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	},
-	"uniIdRouter": {}
+  // 如果您是通过uni_modules形式引入uView，可以忽略此配置
+  "easycom": {
+    "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+  },
+  "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "小烨记账"
+      }
+    },
+    {
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/detail/detail",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/count/count",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/account/account",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/my/my",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/personalInfo/personalInfo",
+      "style": {
+        "navigationBarTitleText": "个人信息"
+      }
+    }
+  ],
+  "tabBar": {
+    "selectedColor": "#FFC0CB",
+    "list": [{
+        "pagePath": "pages/detail/detail",
+        "text": "明细",
+        "iconPath": "static/img/tabbar/detail.png",
+        "selectedIconPath": "static/img/tabbar/detail-pink.png"
+      },
+      {
+        "pagePath": "pages/count/count",
+        "text": "统计",
+        "iconPath": "static/img/tabbar/count.png",
+        "selectedIconPath": "static/img/tabbar/count-pink.png"
+      },
+      {
+        "pagePath": "pages/account/account",
+        "text": "账户",
+        "iconPath": "static/img/tabbar/account.png",
+        "selectedIconPath": "static/img/tabbar/account-pink.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/img/tabbar/my.png",
+        "selectedIconPath": "static/img/tabbar/my-pink.png"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小烨记账",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "uniIdRouter": {}
 }

@@ -214,8 +214,8 @@ var _default = {
                 if (res.data.code == 1) {
                   uni.setStorageSync('openId', res.data.data.openid);
                   uni.setStorageSync('token', res.data.data.token);
-                  uni.navigateTo({
-                    url: '/pages/home/home'
+                  uni.switchTab({
+                    url: '/pages/detail/detail'
                   });
                   _this2.$api.msg("登录成功");
                 } else {

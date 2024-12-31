@@ -1,7 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/detail/detail",
+    "pages/count/count",
+    "pages/account/account",
+    "pages/my/my",
+    "pages/personalInfo/personalInfo"
   ],
   "subPackages": [],
   "window": {
@@ -9,6 +14,35 @@
     "navigationBarTitleText": "小烨记账",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "selectedColor": "#FFC0CB",
+    "list": [
+      {
+        "pagePath": "pages/detail/detail",
+        "text": "明细",
+        "iconPath": "static/img/tabbar/detail.png",
+        "selectedIconPath": "static/img/tabbar/detail-pink.png"
+      },
+      {
+        "pagePath": "pages/count/count",
+        "text": "统计",
+        "iconPath": "static/img/tabbar/count.png",
+        "selectedIconPath": "static/img/tabbar/count-pink.png"
+      },
+      {
+        "pagePath": "pages/account/account",
+        "text": "账户",
+        "iconPath": "static/img/tabbar/account.png",
+        "selectedIconPath": "static/img/tabbar/account-pink.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/img/tabbar/my.png",
+        "selectedIconPath": "static/img/tabbar/my-pink.png"
+      }
+    ]
   },
   "usingComponents": {}
 }

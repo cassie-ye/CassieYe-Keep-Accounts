@@ -18,10 +18,27 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "3.7.2",
+  "libVersion": "",
   "appid": "wx6a3392a6ec961c26",
   "projectname": "keep-accounts-uniapp",
-  "condition": {},
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": []
+    }
+  },
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2

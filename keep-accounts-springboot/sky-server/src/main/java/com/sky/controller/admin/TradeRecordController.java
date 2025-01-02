@@ -7,10 +7,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Author: Cassie
@@ -38,5 +37,33 @@ public class TradeRecordController {
         log.info("新增交易记录：{}", tradeRecordDTO);
         tradeRecordService.addTradeRecord(tradeRecordDTO);
         return Result.success("新增交易记录成功");
+    }
+
+    /**
+     * 删除交易记录
+     *
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/{id}")
+    @ApiOperation("删除交易记录")
+    public Result deleteTradeRecord(@PathVariable Long id) {
+        log.info("删除交易记录：{}", id);
+        tradeRecordService.deleteTradeRecord(id);
+        return Result.success("删除交易记录成功");
+    }
+
+    /**
+     * 批量删除交易记录
+     *
+     * @param ids
+     * @return
+     */
+    @DeleteMapping
+    @ApiOperation("批量删除交易记录")
+    public Result batchDeleteTradeRecord(@RequestParam List<Long> ids) {
+        log.info("批量删除交易记录：{}", ids);
+        tradeRecordService.batchDeleteTradeRecord(ids);
+        return Result.success("批量删除交易记录成功");
     }
 }

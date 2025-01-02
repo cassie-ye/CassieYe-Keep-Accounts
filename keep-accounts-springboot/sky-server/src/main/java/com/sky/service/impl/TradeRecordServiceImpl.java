@@ -4,9 +4,12 @@ import com.sky.dto.TradeRecordDTO;
 import com.sky.entity.TradeRecord;
 import com.sky.mapper.TradeRecordMapper;
 import com.sky.service.TradeRecordService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Author: Cassie
@@ -15,6 +18,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
+@Slf4j
 public class TradeRecordServiceImpl implements TradeRecordService {
 
     @Autowired
@@ -29,5 +33,19 @@ public class TradeRecordServiceImpl implements TradeRecordService {
         TradeRecord tradeRecord = new TradeRecord();
         BeanUtils.copyProperties(tradeRecordDTO, tradeRecord);
         tradeRecordMapper.insert(tradeRecord);
+    }
+
+    /**
+     * 删除交易记录
+     *
+     * @param id
+     */
+    public void deleteTradeRecord(Long id) {
+        tradeRecordMapper.delete(id);
+    }
+
+    public void batchDeleteTradeRecord(List<Long> ids) {
+        log.info("批量删除交易记录：{}", ids);
+        tradeRecordMapper.batchDelete(ids);
     }
 }

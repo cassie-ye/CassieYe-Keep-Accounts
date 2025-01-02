@@ -7,13 +7,6 @@ export function fetchList(query) {
     params: query
   })
 }
-export function fetchList2(query) {
-  return request({
-    url: '/demo/demobase/goodsDealList',
-    method: 'get',
-    params: query
-  })
-}
 
 export function fetchArticle(id) {
   return request({

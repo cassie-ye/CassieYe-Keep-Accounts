@@ -35,17 +35,17 @@ import Layout from '@/layout'
  * all roles can be accessed
  */
 export const constantRoutes = [
-  {
-    path: '/redirect',
-    component: Layout,
-    hidden: true,
-    children: [
-      {
-        path: '/redirect/:path(.*)',
-        component: () => import('@/views/redirect/index')
-      }
-    ]
-  },
+  // {
+  //   path: '/redirect',
+  //   component: Layout,
+  //   hidden: true,
+  //   children: [
+  //     {
+  //       path: '/redirect/:path(.*)',
+  //       component: () => import('@/views/redirect/index')
+  //     }
+  //   ]
+  // },
   {
     path: '/login',
     component: () => import('@/views/login/index'),
@@ -69,7 +69,7 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/stallManagement/list'
+    redirect: '/keepAccountsManagement/incomeList'
   }
 ]
 
@@ -78,91 +78,11 @@ export const constantRoutes = [
  * the routes that need to be dynamically loaded based on user roles
  */
 export const asyncRoutes = [
-  // {
-  //   path: '/permission',
-  //   component: Layout,
-  //   redirect: '/permission/page',
-  //   alwaysShow: true, // will always show the root menu
-  //   name: 'Permission',
-  //   meta: {
-  //     title: 'Permission',
-  //     icon: 'lock',
-  //     roles: ['admin', 'editor'] // you can set roles in root nav
-  //   },
-  //   children: [
-  //     {
-  //       path: 'page',
-  //       component: () => import('@/views/permission/page'),
-  //       name: 'PagePermission',
-  //       meta: {
-  //         title: 'Page Permission',
-  //         roles: ['admin'] // or you can only set roles in sub nav
-  //       }
-  //     },
-  //     {
-  //       path: 'directive',
-  //       component: () => import('@/views/permission/directive'),
-  //       name: 'DirectivePermission',
-  //       meta: {
-  //         title: 'Directive Permission'
-  //         // if do not set roles, means: this page does not require permission
-  //       }
-  //     },
-  //     {
-  //       path: 'role',
-  //       component: () => import('@/views/permission/role'),
-  //       name: 'RolePermission',
-  //       meta: {
-  //         title: 'Role Permission',
-  //         roles: ['admin']
-  //       }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/icon',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       component: () => import('@/views/icons/index'),
-  //       name: 'Icons',
-  //       meta: { title: 'Icons', icon: 'icon', noCache: true }
-  //     }
-  //   ]
-  // },
-
-  // /** when your routing map is too long, you can split it into small modules **/
-  // componentsRouter,
-  // chartsRouter,
-  // nestedRouter,
-  // tableRouter,
-
-  // {
-  //   path: "/example",
-  //   component: Layout,
-  //   redirect: "/example/list",
-  //   name: "Example",
-  //   alwaysShow: true,
-  //   meta: {
-  //     title: "交易",
-  //     icon: "el-icon-s-help",
-  //   },
-  //   children: [
-  //     {
-  //       path: "list",
-  //       component: () => import("@/views/example/list"),
-  //       name: "PurchaseList",
-  //       meta: { title: "购买记录", icon: "list" },
-  //     },
-  //   ],
-  // },
   {
-    path: '/stallManagement',
+    path: '/keepAccountsManagement',
     component: Layout,
-    redirect: '/stallManagement/list',
-    name: 'StallManagement',
+    redirect: '/keepAccountsManagement/incomeList',
+    name: 'KeepAccountsManagement',
     alwaysShow: true,
     meta: {
       title: '摊位管理',
@@ -171,233 +91,51 @@ export const asyncRoutes = [
     children: [
       {
         path: 'list',
-        component: () => import('@/views/stallManagement/stallManagement'),
-        name: 'StallList',
+        component: () => import('@/views/keepAccountsManagement/incomeList'),
+        name: 'IncomeList',
         meta: { title: '摊位管理', icon: 'list' }
       }
     ]
   },
-  {
-    path: '/purchaseManagement',
-    component: Layout,
-    redirect: '/purchaseManagement/list',
-    name: 'PurchaseManagement',
-    alwaysShow: true,
-    meta: {
-      title: '采购管理',
-      icon: 'el-icon-shopping-cart-full'
-    },
-    children: [
-      {
-        path: 'list',
-        component: () => import('@/views/purchaseManagement/purchaseRecords'),
-        name: 'PurchaseRecordList',
-        meta: { title: '采购记录', icon: 'list' }
-      }
-    ]
-  },
-  {
-    path: '/allocateGoodsManagement',
-    component: Layout,
-    redirect: '/allocateGoodsManagement/records',
-    name: 'AllocateGoodsManagement',
-    alwaysShow: true,
-    meta: {
-      title: '配货管理',
-      icon: 'el-icon-s-help'
-    },
-    children: [
-      {
-        path: 'records',
-        component: () =>
-          import('@/views/allocateGoodsManagement/allocateGoodsRecords.vue'),
-        name: 'AllocateGoodsRecords',
-        meta: { title: '配货记录', icon: 'list' }
-      }
-    ]
-  },
   // {
-  //   path: '/enterVenueManagement',
+  //   path: '/purchaseManagement',
   //   component: Layout,
-  //   redirect: '/enterVenueManagement/record',
-  //   name: 'EnterVenueManagement',
+  //   redirect: '/purchaseManagement/list',
+  //   name: 'PurchaseManagement',
   //   alwaysShow: true,
   //   meta: {
-  //     title: '进场管理',
-  //     icon: 'el-icon-s-platform'
+  //     title: '采购管理',
+  //     icon: 'el-icon-shopping-cart-full'
   //   },
   //   children: [
   //     {
-  //       path: 'record',
+  //       path: 'list',
+  //       component: () => import('@/views/purchaseManagement/purchaseRecords'),
+  //       name: 'PurchaseRecordList',
+  //       meta: { title: '采购记录', icon: 'list' }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/allocateGoodsManagement',
+  //   component: Layout,
+  //   redirect: '/allocateGoodsManagement/records',
+  //   name: 'AllocateGoodsManagement',
+  //   alwaysShow: true,
+  //   meta: {
+  //     title: '配货管理',
+  //     icon: 'el-icon-s-help'
+  //   },
+  //   children: [
+  //     {
+  //       path: 'records',
   //       component: () =>
-  //         import('@/views/enterVenueManagement/enterVenueRecord'),
-  //       name: 'EnterVenueRecord',
-  //       meta: { title: '进场记录', icon: 'list' }
+  //         import('@/views/allocateGoodsManagement/allocateGoodsRecords.vue'),
+  //       name: 'AllocateGoodsRecords',
+  //       meta: { title: '配货记录', icon: 'list' }
   //     }
   //   ]
   // },
-  // {
-  //   path: '/tab',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       component: () => import('@/views/tab/index'),
-  //       name: 'Tab',
-  //       meta: { title: 'Tab', icon: 'tab' }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/error',
-  //   component: Layout,
-  //   redirect: 'noRedirect',
-  //   name: 'ErrorPages',
-  //   meta: {
-  //     title: 'Error Pages',
-  //     icon: '404'
-  //   },
-  //   children: [
-  //     {
-  //       path: '401',
-  //       component: () => import('@/views/error-page/401'),
-  //       name: 'Page401',
-  //       meta: { title: '401', noCache: true }
-  //     },
-  //     {
-  //       path: '404',
-  //       component: () => import('@/views/error-page/404'),
-  //       name: 'Page404',
-  //       meta: { title: '404', noCache: true }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/error-log',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'log',
-  //       component: () => import('@/views/error-log/index'),
-  //       name: 'ErrorLog',
-  //       meta: { title: 'Error Log', icon: 'bug' }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/excel',
-  //   component: Layout,
-  //   redirect: '/excel/export-excel',
-  //   name: 'Excel',
-  //   meta: {
-  //     title: 'Excel',
-  //     icon: 'excel'
-  //   },
-  //   children: [
-  //     {
-  //       path: 'export-excel',
-  //       component: () => import('@/views/excel/export-excel'),
-  //       name: 'ExportExcel',
-  //       meta: { title: 'Export Excel' }
-  //     },
-  //     {
-  //       path: 'export-selected-excel',
-  //       component: () => import('@/views/excel/select-excel'),
-  //       name: 'SelectExcel',
-  //       meta: { title: 'Export Selected' }
-  //     },
-  //     {
-  //       path: 'export-merge-header',
-  //       component: () => import('@/views/excel/merge-header'),
-  //       name: 'MergeHeader',
-  //       meta: { title: 'Merge Header' }
-  //     },
-  //     {
-  //       path: 'upload-excel',
-  //       component: () => import('@/views/excel/upload-excel'),
-  //       name: 'UploadExcel',
-  //       meta: { title: 'Upload Excel' }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/zip',
-  //   component: Layout,
-  //   redirect: '/zip/download',
-  //   alwaysShow: true,
-  //   name: 'Zip',
-  //   meta: { title: 'Zip', icon: 'zip' },
-  //   children: [
-  //     {
-  //       path: 'download',
-  //       component: () => import('@/views/zip/index'),
-  //       name: 'ExportZip',
-  //       meta: { title: 'Export Zip' }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/pdf',
-  //   component: Layout,
-  //   redirect: '/pdf/index',
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       component: () => import('@/views/pdf/index'),
-  //       name: 'PDF',
-  //       meta: { title: 'PDF', icon: 'pdf' }
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: '/pdf/download',
-  //   component: () => import('@/views/pdf/download'),
-  //   hidden: true
-  // },
-
-  // {
-  //   path: '/theme',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       component: () => import('@/views/theme/index'),
-  //       name: 'Theme',
-  //       meta: { title: 'Theme', icon: 'theme' }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/clipboard',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       component: () => import('@/views/clipboard/index'),
-  //       name: 'ClipboardDemo',
-  //       meta: { title: 'Clipboard', icon: 'clipboard' }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: 'external-link',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'https://github.com/PanJiaChen/vue-element-admin',
-  //       meta: { title: 'External Link', icon: 'link' }
-  //     }
-  //   ]
-  // },
-
-  // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
 

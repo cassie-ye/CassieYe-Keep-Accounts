@@ -3,8 +3,11 @@ package com.sky.mapper;
 import com.sky.annotation.AutoFill;
 import com.sky.entity.TradeRecord;
 import com.sky.enumeration.OperationType;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * Author: Cassie
@@ -26,4 +29,19 @@ public interface TradeRecordMapper {
     )
     @AutoFill(value = OperationType.INSERT)
     void insert(TradeRecord tradeRecord);
+
+    /**
+     * 删除交易记录
+     *
+     * @param id
+     */
+    @Delete("delete from trade_record where id = #{id}")
+    void delete(Long id);
+
+    /**
+     * 批量删除交易记录
+     *
+     * @param ids
+     */
+    void batchDelete(List<Long> ids);
 }

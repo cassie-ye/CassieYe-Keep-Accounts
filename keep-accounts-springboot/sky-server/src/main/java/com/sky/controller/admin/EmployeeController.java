@@ -10,6 +10,7 @@ import com.sky.result.PageResult;
 import com.sky.result.Result;
 import com.sky.service.EmployeeService;
 import com.sky.utils.JwtUtil;
+import com.sky.utils.PublicUtilController;
 import com.sky.vo.EmployeeLoginVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -25,10 +26,10 @@ import java.util.Map;
  * 员工管理
  */
 @RestController
-@RequestMapping("/admin/employee")
+@RequestMapping("/api/admin/employee")
 @Slf4j
 @Api(tags = "员工相关接口")
-public class EmployeeController {
+public class EmployeeController extends PublicUtilController {
 
     @Autowired
     private EmployeeService employeeService;

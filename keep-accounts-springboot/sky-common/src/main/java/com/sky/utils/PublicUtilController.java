@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
  * @Description
  * @Version 1.0
  */
+
 @CrossOrigin
 public class PublicUtilController {
 

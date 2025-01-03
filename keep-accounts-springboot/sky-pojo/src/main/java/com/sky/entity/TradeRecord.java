@@ -25,6 +25,9 @@ public class TradeRecord implements Serializable {
     // 主键Id
     private Long id;
 
+    // 用户Id
+    private Long userId;
+
     // 收入/支出 分类
     private String category;
 

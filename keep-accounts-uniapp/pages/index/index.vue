@@ -37,7 +37,7 @@ export default {
 		getWxCode() {
 			wx.login({
 				success: (res) => {
-					this.getOpenId(res.code);
+					// this.getOpenId(res.code);
 					console.log(res)
 				},
 				fail: (res) => { console.log("获取登录凭证code失败！", res) }

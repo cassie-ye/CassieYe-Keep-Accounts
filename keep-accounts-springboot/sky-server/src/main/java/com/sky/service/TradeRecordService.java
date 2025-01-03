@@ -15,20 +15,23 @@ public interface TradeRecordService {
      * 新增交易记录
      *
      * @param tradeRecordDTO
+     * @param userId
      */
-    void addTradeRecord(TradeRecordDTO tradeRecordDTO);
+    void addTradeRecord(TradeRecordDTO tradeRecordDTO, Long userId);
 
     /**
      * 删除交易记录
      *
      * @param id
+     * @param userId
      */
-    void deleteTradeRecord(Long id);
+    void deleteTradeRecord(Long id, Long userId);
 
     /**
      * 批量删除交易记录
      *
      * @param ids
+     * @param userId
      */
-    void batchDeleteTradeRecord(List<Long> ids);
+    void batchDeleteTradeRecord(List<Long> ids, Long userId);
 }

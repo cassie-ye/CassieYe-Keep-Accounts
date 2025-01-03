@@ -176,10 +176,9 @@ var _default = {
      * 获取微信code
      */
     getWxCode: function getWxCode() {
-      var _this = this;
       wx.login({
         success: function success(res) {
-          _this.getOpenId(res.code);
+          // this.getOpenId(res.code);
           console.log(res);
         },
         fail: function fail(res) {
@@ -192,7 +191,7 @@ var _default = {
      * @param code 
      */
     getOpenId: function getOpenId(code) {
-      var _this2 = this;
+      var _this = this;
       return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
         var url, data, res;
         return _regenerator.default.wrap(function _callee$(_context) {
@@ -204,7 +203,7 @@ var _default = {
                   code: code
                 };
                 _context.next = 4;
-                return _this2.$postWwwRequest({
+                return _this.$postWwwRequest({
                   url: url,
                   data: data
                 });
@@ -217,9 +216,9 @@ var _default = {
                   uni.switchTab({
                     url: '/pages/detail/detail'
                   });
-                  _this2.$api.msg("登录成功");
+                  _this.$api.msg("登录成功");
                 } else {
-                  _this2.$api.msg("登录失败");
+                  _this.$api.msg("登录失败");
                 }
               case 7:
               case "end":

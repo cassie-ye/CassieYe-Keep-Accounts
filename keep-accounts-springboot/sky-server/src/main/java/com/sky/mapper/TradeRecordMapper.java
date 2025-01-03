@@ -6,6 +6,7 @@ import com.sky.enumeration.OperationType;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -23,11 +24,10 @@ public interface TradeRecordMapper {
      *
      * @param tradeRecord
      */
-    @Insert("insert into trade_record (category,money,memorandum,route,type,create_time,update_time,create_user,update_user)" +
+    @Insert("insert into trade_record (user_id,category,money,memorandum,route,type,create_time,update_time,create_user,update_user)" +
             "values" +
-            "(#{category},#{money},#{memorandum},#{route},#{type},#{createTime},#{updateTime},#{createUser},#{updateUser})"
+            "(#{userId},#{category},#{money},#{memorandum},#{route},#{type},#{createTime},#{updateTime},#{createUser},#{updateUser})"
     )
-    @AutoFill(value = OperationType.INSERT)
     void insert(TradeRecord tradeRecord);
 
     /**
@@ -44,4 +44,12 @@ public interface TradeRecordMapper {
      * @param ids
      */
     void batchDelete(List<Long> ids);
+
+    /**
+     * 根据id查询用户id
+     *
+     * @param id
+     */
+    @Select("select user_id from trade_record where id = #{id}")
+    Long getUserIdById(Long id);
 }
